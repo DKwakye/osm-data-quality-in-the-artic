@@ -4,7 +4,7 @@ This repository contains the necessary data and Jupyter Notebook script on how t
 
 ## Usage
 
-To launch this notebook with Binder press this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DKwakye/osm-data-quality-in-the-artic/6c055fc40cc6b18e45af58e269115fab4b61e497?urlpath=lab%2Ftree%2FDQISArtic.ipynb)
+To launch this notebook with Binder press this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DKwakye/osm-data-quality-in-the-artic/e797c8e58fef8faf686d5e40fbeb668296b7b47c?urlpath=lab%2Ftree%2FDQISArtic.ipynb)
 
 ## Development Setup
 
@@ -25,3 +25,4 @@ pip install -r requirements.txt
 ```bash
 jupyter notebook
 ```
+
