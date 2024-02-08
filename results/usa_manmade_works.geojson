@@ -1,0 +1,368 @@
+{
+  "attribution": {
+    "url": "https://ohsome.org/copyrights",
+    "text": "\u00a9 OpenStreetMap contributors"
+  },
+  "apiVersion": "1.10.1",
+  "metadata": {
+    "description": "OSM data as GeoJSON features."
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -147.8247571,
+              64.8359118
+            ],
+            [
+              -147.8244221,
+              64.8355072
+            ],
+            [
+              -147.8246572,
+              64.835472
+            ],
+            [
+              -147.8248145,
+              64.835662
+            ],
+            [
+              -147.8250648,
+              64.8356245
+            ],
+            [
+              -147.8252424,
+              64.8358391
+            ],
+            [
+              -147.8247571,
+              64.8359118
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "@changesetId": 107937662,
+        "@lastEdit": "2021-07-14T00:07:15Z",
+        "@osmId": "way/303650359",
+        "@osmType": "way",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 4,
+        "addr:housenumber": "4630",
+        "addr:postcode": "99701",
+        "addr:street": "Old Airport Way",
+        "building": "industrial",
+        "man_made": "works",
+        "name": "The Great Alaskan Bowl Company",
+        "shop": "gift",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -147.7644246,
+              64.8390458
+            ],
+            [
+              -147.7630754,
+              64.8390313
+            ],
+            [
+              -147.7630732,
+              64.8388863
+            ],
+            [
+              -147.7628369,
+              64.8388869
+            ],
+            [
+              -147.7628351,
+              64.838765
+            ],
+            [
+              -147.7627919,
+              64.8387651
+            ],
+            [
+              -147.7627909,
+              64.8387033
+            ],
+            [
+              -147.7627233,
+              64.8387035
+            ],
+            [
+              -147.762722,
+              64.8386177
+            ],
+            [
+              -147.7628081,
+              64.8386175
+            ],
+            [
+              -147.7628073,
+              64.838565
+            ],
+            [
+              -147.762951,
+              64.8385646
+            ],
+            [
+              -147.7629494,
+              64.8384564
+            ],
+            [
+              -147.7647662,
+              64.8384584
+            ],
+            [
+              -147.7647656,
+              64.838557
+            ],
+            [
+              -147.7645735,
+              64.8385568
+            ],
+            [
+              -147.7645733,
+              64.8386067
+            ],
+            [
+              -147.7644691,
+              64.8386066
+            ],
+            [
+              -147.7644672,
+              64.8390267
+            ],
+            [
+              -147.7644246,
+              64.8390458
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "@changesetId": 51936389,
+        "@lastEdit": "2017-09-11T11:08:26Z",
+        "@osmId": "way/368354970",
+        "@osmType": "way",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 2,
+        "addr:city": "Fairbanks",
+        "addr:housenumber": "1150",
+        "addr:postcode": "99701",
+        "addr:state": "AK",
+        "addr:street": "Wilbur Street",
+        "building": "yes",
+        "man_made": "works",
+        "name": "Ruth Burnett Sport Fish Hatchery",
+        "tourism": "attraction",
+        "website": "http://www.adfg.alaska.gov/index.cfm?adfg=fishingSportStockingHatcheries.ruthburnett",
+        "works:type": "fish_hatchery"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -144.9077836,
+              64.4746855
+            ],
+            [
+              -144.9500933,
+              64.4757222
+            ],
+            [
+              -144.9617917,
+              64.3869272
+            ],
+            [
+              -144.8468499,
+              64.3841017
+            ],
+            [
+              -144.8351515,
+              64.4729058
+            ],
+            [
+              -144.9077836,
+              64.4746855
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "@changesetId": 80394949,
+        "@lastEdit": "2020-01-31T22:08:47Z",
+        "@osmId": "way/455478782",
+        "@osmType": "way",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 2,
+        "landuse": "industrial",
+        "man_made": "works",
+        "name": "Pogo Mine",
+        "note": "boundary is approximate",
+        "operator": "Sumitomo Metal Mining Pogo LLC",
+        "resource": "gold",
+        "website": "http://dnr.alaska.gov/mlw/mining/largemine/pogo/",
+        "works": "gold"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -145.7471996,
+              64.0628852
+            ],
+            [
+              -145.7420319,
+              64.0626232
+            ],
+            [
+              -145.742213,
+              64.0610894
+            ],
+            [
+              -145.7416626,
+              64.0594111
+            ],
+            [
+              -145.7449146,
+              64.0592907
+            ],
+            [
+              -145.7480906,
+              64.0610617
+            ],
+            [
+              -145.7471996,
+              64.0628852
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "@changesetId": 86562424,
+        "@lastEdit": "2020-06-12T10:54:42Z",
+        "@osmId": "way/479339577",
+        "@osmType": "way",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 2,
+        "landuse": "commercial",
+        "man_made": "works",
+        "name": "Delta Concrete"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -150.0291814,
+              62.1616895
+            ],
+            [
+              -150.0293005,
+              62.1616905
+            ],
+            [
+              -150.0292984,
+              62.1617456
+            ],
+            [
+              -150.0288709,
+              62.161742
+            ],
+            [
+              -150.0288857,
+              62.1613521
+            ],
+            [
+              -150.0290062,
+              62.1613531
+            ],
+            [
+              -150.0292041,
+              62.1613547
+            ],
+            [
+              -150.0292002,
+              62.1614575
+            ],
+            [
+              -150.0292893,
+              62.1614582
+            ],
+            [
+              -150.0292846,
+              62.1615836
+            ],
+            [
+              -150.0291855,
+              62.1615828
+            ],
+            [
+              -150.0291814,
+              62.1616895
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "@changesetId": 123026305,
+        "@lastEdit": "2022-06-30T04:40:53Z",
+        "@osmId": "way/296835304",
+        "@osmType": "way",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 4,
+        "building": "industrial",
+        "craft": "brewery",
+        "man_made": "works",
+        "microbrewery": "yes",
+        "name": "Denali Brewing Company",
+        "produce": "beer",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -144.1957327,
+          64.3565514
+        ]
+      },
+      "properties": {
+        "@changesetId": 43916866,
+        "@lastEdit": "2016-11-24T10:24:25Z",
+        "@osmId": "node/4518755177",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "works",
+        "source:position": "Bing;USGS Topo"
+      }
+    }
+  ]
+}

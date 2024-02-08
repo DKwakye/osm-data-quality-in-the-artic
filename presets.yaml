@@ -1,0 +1,777 @@
+---
+# A topic describes the request which should be made to the ohsome API.
+# Each topic is defined by ohsome API parameters.
+# https://docs.ohsome.org/ohsome-api/stable/
+
+### CORE TOPICS ###
+
+building-count:
+  name: Building Count
+  description: >-
+    All buildings as defined by all objects tagged with 'building=*'.
+  endpoint: elements
+  aggregation_type: count
+  filter: building=* and building!=no and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+    - attribute-completeness
+  projects:
+    - core
+
+industrial-building-count:
+  name: Building Count
+  description: >-
+    All industrial buildings as defined by all objects tagged with 'building=industrial'.
+  endpoint: elements
+  aggregation_type: count
+  filter: building=industrial
+  indicators:
+    - mapping-saturation
+    - currentness
+    - attribute-completeness
+  projects:
+    - experimental
+
+building-area:
+  name: Building Area
+  description: >-
+    All buildings as defined by all objects tagged with 'building=*'.
+  endpoint: elements
+  aggregation_type: area
+  filter: building=* and building!=no and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - building-completeness
+  projects:
+    - core
+
+major-roads-length:
+  name: Major Roads Length
+  description: >-
+    The road network defined by all objects which hold the principal tags for
+    the road network and their link roads as defined in the OSM Wiki`:`
+    https://wiki.openstreetmap.org/wiki/Key:highway
+  endpoint: elements
+  aggregation_type: length
+  filter: >-
+    highway in (motorway, trunk, motorway_link, trunk_link, primary,
+    primary_link, secondary, secondary_link, tertiary, tertiary_link,
+    unclassified, residential) and type:way
+  ratio_filter: >-
+    highway in (motorway, trunk, motorway_link, trunk_link, primary,
+    primary_link, secondary, secondary_link, tertiary, tertiary_link,
+    unclassified, residential) and type:way and name=*
+  indicators:
+    - mapping-saturation
+    - attribute-completeness
+    - currentness  # currentness always requests /contributions/latest/count [count!]
+  projects:
+    - core
+
+railway-length:
+  name: Railways
+  description: >-
+    Railway networks.
+  endpoint: elements
+  aggregation_type: length
+  filter: >-
+    railway in (rail, subway, tram, light_rail, monorail, funicular, narrow_gauge) and type:way
+  indicators:
+    - mapping-saturation
+    - currentness # currentness always requests /contributions/latest/count [count!]
+  projects:
+    - core
+
+poi:
+  name: POI
+  description: Points of interest
+  endpoint: elements
+  aggregation_type: count
+  source: https://github.com/GIScience/openpoiservice/blob/master/openpoiservice/server/categories/categories.yml
+  filter: >-
+    (aeroway in (aerodrome, helipad, heliport))
+    or (amenity in (animal_boarding, animal_shelter, arts_centre, atm, baby_hatch, bank, bar, bbq, bench,
+    bicycle_parking, bicycle_rental, bicycle_repair_station, biergarten, boat_sharing, brothel, bureau_de_change,
+    bus_station, bus_stop, cafe, car_sharing, car_wash, casino, charging_station, cinema, clinic, clock, college,
+    community_centre, compressed_air, courthouse, coworking_space, crematorium, crypt, dentist, doctors, dive_centre,
+    dojo, drinking_water, driving_school, embassy, emergency_phone, ev_charging, fast_food, ferry_terminal,
+    fire_station, food_court, fountain, fuel, gambling, grave_yard, hospital, hunting_stand, ice_cream, internet_cafe,
+    kindergarten, language_school, library, kneipp_water_cure, marketplace, motorcycle_parking, music_school, nightclub,
+    nursing_home, parking, parking_entrance, parking_space, pharmacy, photo_booth, planetarium, place_of_worship,
+    police, post_box, post_office, pub, public_bath, prison, ranger_station, recycling, rescue_station, restaurant,
+    retirement_home, sanitary_dump_station, school, shelter, shower, social_centre, social_facility, spa, stripclub,
+    studio, table, taxi, telephone, toilets, townhall, university, vending_machine, veterinary, waste_basket,
+    waste_disposal, water_point))
+    or (emergency in (access_point, defibrillator, fire_hydrant))
+    or (healthcare = blood_donation)
+    or (healthcare:speciality = vacciniation)
+    or (highway = raceway)
+    or (historic in (aircraft, aqueduct, archaeological_site, battlefield, boundary_stone, building,
+    castle, cannon, city_gate, citywalls, farm, fort, gallows, highwater_mark, locomotive, manor,
+    memorial, milestone, monastery, monument, optical_telegraph, pillory, ruins, rune_stone, ship,
+    tomb, wayside_cross, wayside_shrine, wreck))
+    or (leisure in (adult_gaming_centre, amusement_arcade, beach_resort, bandstand, bird_hide, common,
+    dance, dog_park, firepit, fishing, fitness_centre, garden, golf_course, hackerspace,
+    horse_riding, ice_rink, marina, miniature_golf, nature_reserve, park, picnic_table, pitch, playground,
+    sauna, slipway, sports_centre, stadium, summer_camp, swimming_area, swimming_pool, track, turkish_bad,
+    water_park, wildlife_hide))
+    or (natural in (beach, cave_entrance, geyser, peak, rock, saddle, spring, volcano,
+    water))
+    or (public_transport in (platform, stop_position, station, stop_area))
+    or (railway in (halt, station, tram_station))
+    or (shop in (agrarian, alcohol, antiques, art, bag, bakery, beauty, bed, beverages,
+    bicycle, books, boutique, brewing_supplies, business_machines, butcher, cafe,camera,
+    candles, car, car_parts, carpet, curtain, cheese, chemist, chocolate,
+    clothes, coffee, computer, confectionery, convenience, copyshop, cosmetics,
+    dairy, deli, department_store, doityourself, dry_cleaning, electrical, electronics,
+    erotic, estate_agent, e-cigarette, farm, fashion, fishing, florist, funeral_directors,
+    furniture, games, garden_centre, garden_furniture, gas, general, gift, glaziery, greengrocer, grocery,
+    hairdresser, hairdresser_supply, hardware, hearing_aids, herbalist, hifi, houseware, hunting, insurance,
+    interior_decoration, jewelry, laundry, leather, locksmith, kiosk, kitchen, lamps, lottery, mall,
+    massage, medical_supply, mobile_phone, model, motorcycle, music, musical_instrument,
+    nutrition_supplements, newsagent, optician, organic, outdoor, paint, pastry, perfumery, photo,
+    pyrotechnics, rediotechnics, seafood, second_hand,secruity, shoes, spices, sports, stationery,
+    supermarket, swimming_pool, tailor, tattoo, tea, ticket, tiles, tobacco, toys, travel_agency, trophy,
+    tyres, variety_store, video, video_games, watches, weapons, wine, pet))
+    or (tourism in (alpine_hut, apartment, aquarium, artwork, attraction, camp_site, caravan_site,
+    chalet, gallery, museum, guest_house, hostel, hotel, motel, picnic_site, theme_park, viewpoint,
+    wilderness_hut, zoo))
+    or (vaccination = covid19)
+  indicators:
+    - mapping-saturation
+    - currentness
+    - density
+  projects:
+    - core
+
+schools:
+  name: Schools
+  description: Count of schools.
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=school
+  source: https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dschool
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+kindergarten:
+  name: Kindergarten
+  description: Count of kindergarten.
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=kindergarten
+  source: https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dkindergarten
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+clinics:
+  name: Clinics
+  description: Count of clinics.
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=clinic or healthcare=clinic
+  source: https://wiki.openstreetmap.org/wiki/Global_Healthsites_Mapping_Project
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+doctors:
+  name: Doctors
+  description: Count of doctors.
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=doctors or healthcare=doctor
+  source: https://wiki.openstreetmap.org/wiki/Global_Healthsites_Mapping_Project
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+bus-stops:
+  name: Bus Stops
+  description: Count of bus stops.
+  endpoint: elements
+  aggregation_type: count
+  filter: highway=bus_stop
+  source: https://wiki.openstreetmap.org/wiki/Tag:highway%3Dbus_stop
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+tram-stops:
+  name: Tram Stops
+  description: Count of schools.
+  endpoint: elements
+  aggregation_type: count
+  filter: railway=tram_stop
+  source: https://wiki.openstreetmap.org/wiki/Tag:railway%3Dtram_stop
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+subway-stations:
+  name: Subway Stations
+  description: Count of subway stops.
+  endpoint: elements
+  aggregation_type: count
+  filter: station=subway
+  source: https://wiki.openstreetmap.org/wiki/Tag:station%3Dsubway
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+supermarkets:
+  name: Supermarkets
+  description: Count of supermarkets.
+  endpoint: elements
+  aggregation_type: count
+  filter: shop=supermarket
+  source: https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+marketplaces:
+  name: Marketplaces
+  description: Count of marketplaces.
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=marketplace
+  source: https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dmarketplace
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+parks:
+  name: Parks
+  description: Count of parks.
+  endpoint: elements
+  aggregation_type: count
+  filter: leisure=park
+  source: https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+forests:
+  name: Forests
+  description: Count of forests.
+  endpoint: elements
+  aggregation_type: count
+  filter: landuse=forest
+  source: https://wiki.openstreetmap.org/wiki/Forest
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+industrial-landuse-count:
+  name: Industrial Landuse (count)
+  description: Industrial landsites
+  endpoint: elements
+  aggregation_type: count
+  filter: landuse=industrial and type:way
+  source: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dindustrial
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - experimental
+
+industrial-sites-count:
+  name: Industrial Landuse (count)
+  description: Industrial landsites
+  endpoint: elements
+  aggregation_type: count
+  filter: landuse=industrial or building=industrial or industrial=* or man_made=works or landuse=quarry or man_made=storage_tank or man_made=flare
+  source: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dindustrial
+  indicators:
+    - mapping-saturation
+    - currentness
+    - attribute-completeness
+  projects:
+    - experimental
+
+industrial-sites-area:
+  name: Industrial Landuse (count)
+  description: Industrial landsites
+  endpoint: elements
+  aggregation_type: area
+  filter: landuse=industrial or building=industrial or industrial=* or man_made=works or lanuse=quarry
+  source: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dindustrial
+  indicators:
+    - mapping-saturation
+    - currentness
+    - attribute-completeness
+  projects:
+    - experimental
+
+industrial-landuse-area:
+  name: Industrial Landuse (area)
+  description: Industrial areas
+  endpoint: elements
+  aggregation_type: area
+  filter: landuse=industrial and type:way
+  source: https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dindustrial
+  indicators:
+    - mapping-saturation
+    - currentness
+    - attribute-completeness
+  projects:
+    - experimental
+
+fitness-centres:
+  name: Fitness Centres
+  description: Count of fitness centres.
+  endpoint: elements
+  aggregation_type: count
+  filter: leisure in (fitness_centre, sports_centre)
+  source: https://wiki.openstreetmap.org/wiki/Gym_/_Fitness_centre
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+fire-stations:
+  name: Fire Stations
+  description: Count of firestations.
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=fire_station
+  source: https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfire_station
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+hospitals:
+  name: Hospitals
+  description: Count of hospitals.
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=hospital or healthcare=hospital
+  source: https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dhospital
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - core
+
+### SKETCHMAP PROJECT ###
+
+amenities:
+  name: Amenities
+  description: All features with the amenities key.
+  endpoint: elements
+  aggregation_type: count
+  source: https://wiki.openstreetmap.org/wiki/Key:amenity
+  filter: amenity=*
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - sketchmap
+
+landmarks:
+  name: Landmarks for Orientation
+  description: >-
+    Landmarks for orientation in a city such as natural features, public transport stations and amenities.
+  endpoint: elements
+  aggregation_type: count
+  source: https://www.geog.uni-heidelberg.de/gis/sketchmaptool.html
+  filter: >-
+    natural=peak or leisure=park or boundary=national_park or
+    natural=water or waterway=* or highway=bus_stop or railway=station or
+    shop=* or tourism in (hotel, attraction) or
+    amenity in (fuel, pharmacy, hospital, school, college, university,
+    police, fire_station, restaurant, townhall)
+  indicators:
+    - density
+  projects:
+    - sketchmap
+
+### MAPACTION PROJECT ###
+
+mapaction-settlements-count:
+  name: MapAction Settlements Count
+  description: >-
+    Number of settlements (cities)
+  endpoint: elements
+  aggregation_type: count
+  filter: place=city and type:node
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - mapaction
+
+mapaction-capital-city-count:
+  name: MapAction Capital City Count
+  description: >-
+    Number of capital cities
+  endpoint: elements
+  aggregation_type: count
+  filter: place=city and (is_capital=country or admin_level=2 or capital=yes) and type:node
+  indicators: []
+  projects:
+    - mapaction
+
+mapaction-rail-length:
+  name: MapAction Rail Length
+  description: >-
+    Length of objects identified as rails (large railways)
+  endpoint: elements
+  aggregation_type: length
+  filter: railway=rail and type:way
+  indicators:
+    - mapping-saturation
+    - currentness # currentness always requests /contributions/latest/count [count!]
+  projects:
+    - mapaction
+
+mapaction-major-roads-length:
+  name: MapAction Major Roads length
+  description: >-
+    Length of objects identified as major roads (primary, motorway and trunk)
+  endpoint: elements
+  aggregation_type: length
+  filter: highway in (motorway, trunk, primary) and type:way
+  indicators:
+    - mapping-saturation
+    - currentness # currentness always requests /contributions/latest/count [count!]
+  projects:
+    - mapaction
+
+mapaction-lakes-count:
+  name: MapAction Lakes Count
+  description: >-
+    Number of objects identified as lakes, lagoons and reservoirs
+  endpoint: elements
+  aggregation_type: count
+  filter: (water in (lagoon,lake,reservoir) or landuse=reservoir) and type:way
+  indicators:
+    - currentness
+  projects:
+    - mapaction
+
+mapaction-lakes-area:
+  name: MapAction Lakes Area
+  description: >-
+    Area of objects identified as lakes, lagoons and reservoirs
+  endpoint: elements
+  aggregation_type: area
+  filter: (water in (lagoon,lake,reservoir) or landuse=reservoir) and type:way
+  indicators:
+    - mapping-saturation
+  projects:
+    - mapaction
+
+mapaction-rivers-length:
+  name: MapAction Rivers Length
+  description: >-
+    Length of objects identified as rivers (or riverbanks)
+  endpoint: elements
+  aggregation_type: length
+  filter: waterway in (riverbank,river) and type:way
+  indicators:
+    - mapping-saturation
+    - currentness # currentness always requests /contributions/latest/count [count!]
+  projects:
+    - mapaction
+
+### IDEALVGI PROJECT ###
+
+lulc:
+  name: Land Use and Land Cover
+  description: >-
+    Features related to land use and land cover.
+    This definition includes well established tags for coherent areas at the most atomic level available.
+    This definition therefore excludes areas with the keys aeroway, highway, leisure and tourism which can be found in other sources.
+    For further details please contact us.
+  endpoint: elements
+  aggregation_type: area
+  filter: >-
+    (landuse=allotments or landuse=animal_keeping or landuse=basin or landuse=brownfield or landuse=cemetery or landuse=churchyard or landuse=civic_admin or landuse=commercial or landuse=construction or landuse=depot or landuse=education or landuse=farmland or landuse=farmyard or landuse=forest or landuse=garages or landuse=grass or landuse=greenfield or landuse=greenhouse_horticulture or landuse=harbour or landuse=industrial or landuse=landfill or landuse=logging or landuse=meadow or landuse=military or landuse=orchard or landuse=plant_nursery or landuse=port or landuse=quarry or landuse=railway or landuse=recreation_ground or landuse=religious or landuse=reservoir or landuse=residential or landuse=retail or landuse=salt_pond or landuse=village_green or landuse=vineyard or natural=bare_rock or natural=beach or natural=dune or natural=fell or natural=glacier or natural=grassland or natural=heath or natural=landslide or natural=mud or natural=rock or natural=sand or natural=scree or natural=scrub or natural=shingle or natural=water or natural=wetland or natural=wood or waterway=boatyard or waterway=dam or waterway=dock or waterway=riverbank) and geometry:polygon
+  source: >-
+    https://osmlanduse.org;
+    Fonte et al 2016 https://cartography-gis.com/docsbca/iccgis2016/ICCGIS2016-47.pdf;
+    https://github.com/jasp382/glass/tree/master/core/glass/ete/osm2lulc;
+    Schultz et al 2017 https://doi.org/10.1016/j.jag.2017.07.014;
+    https://www.geog.uni-heidelberg.de/gis/ideal_en.html
+  indicators:
+    - mapping-saturation
+    - currentness  # currentness always requests /contributions/latest/count [count!]
+  projects:
+    - idealvgi
+
+### EXPANSE PROJECT ###
+
+local-food-shops:
+  name: Local food shops
+  description: Count of local food shops
+  endpoint: elements
+  aggregation_type: count
+  filter: shop=bakery or shop=butcher or shop=greengrocer or shop=seafood or shop=cheese or shop=dairy
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - expanse
+
+fast-food-restaurants:
+  name: Fast food restaurants
+  description: Count of fast food restaurants
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=fast_food
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - expanse
+
+restaurants:
+  name: Restaurants
+  description: Count of restaurants
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=restaurant or amenity=cafe
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - expanse
+
+convenience-stores:
+  name: Convenience stores
+  description: Count of convenience stores
+  endpoint: elements
+  aggregation_type: count
+  filter: shop=convenience
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - expanse
+
+pubs-and-biergartens:
+  name: Pubs and biergartens
+  description: Count of pubs and biergartens
+  endpoint: elements
+  aggregation_type: count
+  filter: amenity=pub or amenity=biergarten or amenity=bar
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - expanse
+
+alcohol-and-beverages:
+  name: Alcohol and beverages
+  description: Count of shops selling alcohol
+  endpoint: elements
+  aggregation_type: count
+  filter: shop=alcohol or shop=beverages
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - expanse
+
+sweets-and-pasteries:
+  name: Sweets and pasteries
+  description: Count of shops selling sweets and pasteries
+  endpoint: elements
+  aggregation_type: count
+  filter: shop=pastry or amenity=ice_cream or shop=confectionery
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - expanse
+
+### LAND-USE LAYERS (CORINE PROJECT) ###
+#
+# currentness always requests /contributions/latest/count [count!]
+clc-arable-land-area:
+  name: Arable Land CLC
+  description: >-
+    Selected features for Corine Land Cover Category "Arable Land" (level 2) in Agriculture.
+  endpoint: elements
+  aggregation_type: area
+  filter: (landuse=farmland or crop=*) and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+clc-permanent-crops-area:
+  name: Permanent Crops CLC
+  description: Selected features for Corine Land Cover Category "Permanent Crops" (level 2) in Agriculture.
+  endpoint: elements
+  aggregation_type: area
+  filter: landuse in (vineyard, orchard, farmland) and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+clc-pastures-area:
+  name: Pastures CLC
+  description: Selected features for Corine Land Cover Category "Pastures" (level 2) in Agriculture.
+  endpoint: elements
+  aggregation_type: area
+  filter: (landuse=grass or natural=grassland or landcover=grass or natural=fell) and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+clc-forest-area:
+  name: Forests CLC
+  description: Selected features for Corine Land Cover Category "Forests" (level 2) in Seminatural Land.
+  endpoint: elements
+  aggregation_type: area
+  filter: >-
+    (natural=wood or landuse=forest) and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+clc-leaf-type:
+  name: Leaf Types of Forests CLC
+  description: frequency of forests according to Corine Land Cover Category "Forests" (level 2) tagged with Leaf Type.
+  endpoint: elements
+  aggregation_type: area
+  filter: >-
+    (natural=wood or landuse=forest) and geometry:polygon
+  ratio_filter: >-
+    (natural=wood or landuse=forest) and
+    leaf_type in (broadleaved, needleleaved, mixed) and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+    - attribute-completeness
+  projects:
+    - corine-land-cover
+
+clc-shrub-area:
+  name: Shrubs CLC
+  description: Selected features for Corine Land Cover Category "Shrubs" (level 2) in Seminatural Land.
+  endpoint: elements
+  aggregation_type: area
+  filter: (natural in (scrub, fell, tundra, shrubbery) or landuse=meadow) and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+clc-open-spaces-area:
+  name: Open Spaces CLC
+  description: Selected features for Corine Land Cover Category "Open Spaces" (level 2) in Seminatural Land.
+  endpoint: elements
+  aggregation_type: area
+  filter: >-
+    natural in (beach, bare_rock, rock, stone, glacier, ridge, peak, earth_bank, cliff, arete, shingle, crevasse) and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+clc-wetland-area:
+  name: Wetlands CLC
+  description: Selected features for Corine Land Cover Category "Wetlands" (level 1).
+  endpoint: elements
+  aggregation_type: area
+  filter: (natural in (wetland, mud) or landuse=salt_pond) and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+clc-water-area:
+  name: Water CLC
+  description: Selected features for Corine Land Cover Category "Water" (level 1), excluding waterways.
+  endpoint: elements
+  aggregation_type: area
+  filter: >-
+    (natural in (water, spring, hot_spring)
+    or water in (lake, reservoir, pond, oxbow, basin))
+    and geometry:polygon
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+clc-waterway-len:
+  name: Waterways CLC
+  description: Selected features for Corine Land Cover Category "Waterways" (level 2) in Water.
+  endpoint: elements
+  aggregation_type: length
+  filter: waterway in (river, canal, stream, drain, ditch) and geometry:line
+  indicators:
+    - mapping-saturation
+    - currentness
+  projects:
+    - corine-land-cover
+
+### MISC TOPICS ###
+
+minimal:
+  name: Minimal
+  description: A minimal topic definition for testing purposes
+  endpoint: elements
+  aggregation_type: count
+  filter: building=* and building!=no and geometry:polygon
+  indicators:
+    - minimal
+  projects:
+    - misc
+
+### EXPERIMENTAL TOPICS ###
+
+infrastructure-lines:
+  name: Infrastructure Lines
+  description: Line objects related to infrastructure
+  endpoint: elements
+  aggregation_type: length
+  filter: (aerialway=* or aeroway=* or highway=* or power=* or railway=* or telecom=*) and geometry:line
+  indicators:
+    - mapping-saturation
+    - currentness  # currentness always requests /contributions/latest/count [count!]
+  projects:
+    - experimental

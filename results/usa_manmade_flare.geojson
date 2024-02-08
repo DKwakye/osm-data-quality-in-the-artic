@@ -1,0 +1,372 @@
+{
+  "attribution": {
+    "url": "https://ohsome.org/copyrights",
+    "text": "\u00a9 OpenStreetMap contributors"
+  },
+  "apiVersion": "1.10.1",
+  "metadata": {
+    "description": "OSM data as GeoJSON features."
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7202556,
+          70.30972
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:20Z",
+        "@osmId": "node/2780596936",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 2,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7203705,
+          70.309759
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:20Z",
+        "@osmId": "node/2780596940",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 2,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7315547,
+          70.3103652
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:20Z",
+        "@osmId": "node/2780596956",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 2,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7282064,
+          70.3112816
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:20Z",
+        "@osmId": "node/2780596985",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 2,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7304768,
+          70.3096089
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:17Z",
+        "@osmId": "node/2783312784",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7316337,
+          70.3098578
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:17Z",
+        "@osmId": "node/2783312785",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7292424,
+          70.3102737
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:17Z",
+        "@osmId": "node/2783312788",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7304303,
+          70.3105156
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:17Z",
+        "@osmId": "node/2783312791",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.7278474,
+          70.3108706
+        ]
+      },
+      "properties": {
+        "@changesetId": 21627367,
+        "@lastEdit": "2014-04-11T13:44:17Z",
+        "@osmId": "node/2783312792",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.6267917,
+          70.2585725
+        ]
+      },
+      "properties": {
+        "@changesetId": 21685095,
+        "@lastEdit": "2014-04-14T12:46:08Z",
+        "@osmId": "node/2790266724",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.6617591,
+          70.2811625
+        ]
+      },
+      "properties": {
+        "@changesetId": 21685095,
+        "@lastEdit": "2014-04-14T12:46:11Z",
+        "@osmId": "node/2790266834",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.662927,
+          70.2813967
+        ]
+      },
+      "properties": {
+        "@changesetId": 21685095,
+        "@lastEdit": "2014-04-14T12:46:11Z",
+        "@osmId": "node/2790266840",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.6605176,
+          70.2814077
+        ]
+      },
+      "properties": {
+        "@changesetId": 21685095,
+        "@lastEdit": "2014-04-14T12:46:11Z",
+        "@osmId": "node/2790266843",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.6617019,
+          70.281642
+        ]
+      },
+      "properties": {
+        "@changesetId": 21685095,
+        "@lastEdit": "2014-04-14T12:46:11Z",
+        "@osmId": "node/2790266854",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.6604605,
+          70.2818376
+        ]
+      },
+      "properties": {
+        "@changesetId": 21685095,
+        "@lastEdit": "2014-04-14T12:46:11Z",
+        "@osmId": "node/2790266868",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.6628454,
+          70.2818872
+        ]
+      },
+      "properties": {
+        "@changesetId": 21685095,
+        "@lastEdit": "2014-04-14T12:46:11Z",
+        "@osmId": "node/2790266872",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -148.6616611,
+          70.2820966
+        ]
+      },
+      "properties": {
+        "@changesetId": 21685095,
+        "@lastEdit": "2014-04-14T12:46:11Z",
+        "@osmId": "node/2790266880",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 1,
+        "man_made": "flare",
+        "source": "Bing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -147.8624162,
+          70.3213093
+        ]
+      },
+      "properties": {
+        "@changesetId": 68119166,
+        "@lastEdit": "2019-03-14T00:31:31Z",
+        "@osmId": "node/3480328938",
+        "@osmType": "node",
+        "@snapshotTimestamp": "2023-09-20T00:00:00Z",
+        "@version": 2,
+        "man_made": "flare"
+      }
+    }
+  ]
+}
